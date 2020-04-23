@@ -2525,17 +2525,24 @@ bool ASFormatter::getNextLine(bool emptyLineWasDeleted /*false*/)
 	// check for an empty line inside a command brace.
 	// if yes then read the next line (calls getNextLine recursively).
 	// must be after initNewLine.
+	
+	static int funHaslineIsEmpty  = 0;
 	if (shouldDeleteEmptyLines
-	        && lineIsEmpty
-	        && isBraceType((*braceTypeStack)[braceTypeStack->size() - 1], COMMAND_TYPE))
+	        && lineIsEmpty)
 	{
-		if (!shouldBreakBlocks || previousNonWSChar == '{' || !commentAndHeaderFollows())
+		if (++funHaslineIsEmpty>1)
 		{
 			isInPreprocessor = isImmediatelyPostPreprocessor;		// restore
 			lineIsEmpty = false;
 			return getNextLine(true);
 		}
 	}
+
+	if(!lineIsEmpty)
+	{
+		funHaslineIsEmpty = 0;
+	}
+
 	return true;
 }
 
