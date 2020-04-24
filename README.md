@@ -54,7 +54,7 @@
 	delete-empty-lines      # -xe 删除多余空行
 	add-braces              # -j  单行语句加上大括号
 	#align-pointer=name      # *、&这类字符靠近变量名字
-	align-pointer=type       *、&这类字符靠近类型
+	align-pointer=type       #*、&这类字符靠近类型
 	indent-col1-comments	 #缩进从第一列开始的 c++ 注释
 	
 ### http://www.mdeditor.com/  It's easier than github to write md .
