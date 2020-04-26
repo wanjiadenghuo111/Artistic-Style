@@ -57,4 +57,8 @@
 	align-pointer=type       #*、&这类字符靠近类型
 	indent-col1-comments	 #缩进从第一列开始的 c++ 注释
 	
+
+### https://www.kancloud.cn/nikola0618/astyle/ 一个免费的、快速的、轻量的代码自动格式化工具，支持多种开发语言如：C, C++， C++ /CLI，Objective‑C, C# 和 Java 源代码。
+
 ### http://www.mdeditor.com/  It's easier than github to write md .
+
